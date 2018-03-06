@@ -28,12 +28,32 @@ public class BinaryNumbersTest {
     }
 
     @Test
-    public void oneWillRemainSameInBinary(){
+    public void zeroWillRemainZeroBinary() {
+        Assert.assertEquals("0", binaryNumbers.getBinary(0));
+    }
+
+    @Test
+    public void oneWillRemainSameInBinary() {
         Assert.assertEquals("1", binaryNumbers.getBinary(1));
     }
 
     @Test
-    public void twoWillBecomeTenInBinary(){
+    public void twoWillBecomeTenInBinary() {
         Assert.assertEquals("10", binaryNumbers.getBinary(2));
+    }
+
+    @Test
+    public void eightWillBecomeThousandsInBinary() {
+        Assert.assertEquals("1000", binaryNumbers.getBinary(8));
+    }
+
+    @Test
+    public void ElevenHaveMaximumTwoConsecutiveOne() {
+        Assert.assertEquals(2, binaryNumbers.getMaximumConsecutiveOne("11"));
+    }
+
+    @Test
+    public void ThousandHaveMaximumOneConsecutiveOne(){
+        Assert.assertEquals(1, binaryNumbers.getMaximumConsecutiveOne("1000"));
     }
 }
